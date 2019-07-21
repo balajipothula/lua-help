@@ -3,8 +3,12 @@
 
 local calc = {}
 
+--[[
+calc.sum = function (self, ...)
+--]]
+
 --> calculating sum of numbers.
-function calc.sum (...)
+calc.sum = function (...)
   local r          = 0
   local ntable     = {...}
   local ntablesize = #ntable
@@ -18,8 +22,8 @@ function calc.sum (...)
   return r
 end
 
---> calculating multiplication of numbers.
-function calc.mul (...)
+--> calculating product of numbers.
+calc.mul = function (...)
   local r          = 1
   local ntable     = {...}
   local ntablesize = #ntable
@@ -33,8 +37,8 @@ function calc.mul (...)
   return r
 end
 
---> calculating avg of numbers.
-function calc.avg (...)
+--> calculating average of numbers.
+calc.avg = function (...)
   local r          = 0
   local ntable     = {...}
   local ntablesize = #ntable
@@ -50,7 +54,7 @@ function calc.avg (...)
 end
 
 --> calculating factorial of a number.
-function calc.fact (n)
+calc.fact = function (...)
   if "number" == type(n) and 0 <= n then
     if 0 == n then
       return 1
@@ -60,9 +64,5 @@ function calc.fact (n)
   end
   return 0
 end
-
-function calc.sub (a, b) return a - b end
-function calc.div (a, b) return a / b end
-function calc.mod (a, b) return a % b end
 
 return calc
