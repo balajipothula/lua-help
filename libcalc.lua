@@ -21,6 +21,19 @@ calc.sum = function (...)
   return r
 end
 
+--> calculating sum of table of numbers.
+calc.tsum = function (t)
+  local r = 0
+  if nil ~= t and 0 < #t then
+    for n in ipairs(t) do
+      if "number" == type(n) then
+        r = r + n
+      end
+    end
+  end
+  return r
+end
+
 --> calculating product of numbers.
 calc.mul = function (...)
   local r = 1
@@ -35,10 +48,37 @@ calc.mul = function (...)
   return r
 end
 
+--> calculating product of table of numbers.
+calc.tmul = function (t)
+  local r = 1
+  if nil ~= t and 0 < #t then
+    for n in ipairs(t) do
+      if "number" == type(n) then
+        r = r * n
+      end
+    end
+  end
+  return r
+end
+
 --> calculating average of numbers.
 calc.avg = function (...)
   local r = 0
   local t = {...}
+  if nil ~= t and 0 < #t then
+    for n in ipairs(t) do
+      if "number" == type(n) then
+        r = r + n
+      end
+    end
+    return r / #t
+  end
+  return 0
+end
+
+--> calculating average of table of numbers.
+calc.tavg = function (t)
+  local r = 0
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
       if "number" == type(n) then
