@@ -1,5 +1,5 @@
---> calculator library
 --> module name and file name must be same.
+--> calculator library with non-global functions.
 
 local calc = {}
 
