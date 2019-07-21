@@ -12,7 +12,7 @@ calc.sum = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
-    for i, n in ipairs(t) do
+    for n in ipairs(t) do
       if "number" == type(n) then
         r = r + n
       end
@@ -26,7 +26,7 @@ calc.mul = function (...)
   local r = 1
   local t = {...}
   if nil ~= t and 0 < #t then
-    for i, n in ipairs(t) do
+    for n in ipairs(t) do
       if "number" == type(n) then
         r = r * n
       end
@@ -40,7 +40,7 @@ calc.avg = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
-    for i, n in ipairs(t) do
+    for n in ipairs(t) do
       if "number" == type(n) then
         r = r + n
       end
