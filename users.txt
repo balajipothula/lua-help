@@ -1,4 +1,5 @@
-balaji:balaji
+rama:rama
+sama:sama
 ravi:ravi
-raju:raju
 bala:bala
+raju:raju

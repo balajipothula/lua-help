@@ -14,9 +14,8 @@ function calc.sum (...)
         r = r + n
       end
     end
-    return r
   end
-  return 0
+  return r
 end
 
 --> calculating multiplication of numbers.
@@ -30,9 +29,8 @@ function calc.mul (...)
         r = r * n
       end
     end
-    return r
   end
-  return 0
+  return r
 end
 
 --> calculating avg of numbers.

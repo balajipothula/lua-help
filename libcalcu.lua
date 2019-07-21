@@ -3,8 +3,13 @@
 
 local calc = {}
 
---> calculating sum of numbers.
+
+--[[
 calc.sum = function (...)
+--]]
+
+--> calculating sum of numbers.
+calc.sum = function (self, ...)
   local r          = 0
   local ntable     = {...}
   local ntablesize = #ntable
@@ -14,9 +19,8 @@ calc.sum = function (...)
         r = r + n
       end
     end
-    return r
   end
-  return 0
+  return r
 end
 
 return calc
