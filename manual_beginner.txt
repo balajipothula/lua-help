@@ -1,0 +1,2 @@
+Which is not true in context of decision tree?Used in white box model|Perform well with large data|Handles both categorical and numerical data|Random forest tree is used for regression type problem
+Which should be the first test case for the login screen of the website?Check the URL of the login screen is working.|Check the field validation of the username and password.|Check that password must be visible in encrypted form.|Label of the user name and password field must be visible.

@@ -1,0 +1,11 @@
+gcc -shared -fpic -O -I /usr/local/include/luajit-2.1 trim.c -o trim.so
+
+apt install lua-sql-mysql
+apt install lua-sql-postgres
+apt install libmysqlclient-dev
+
+/usr/local/openresty/nginx/sbin/
+
+luasql = require "luasql.mysql"
+
+cur = assert (con:execute("INSERT INTO `table`(`col_int`,`col_varchar`) VALUES (9,'Hi')"))
