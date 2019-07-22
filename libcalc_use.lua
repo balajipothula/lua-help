@@ -1,6 +1,8 @@
 -- module name and file name must be same.
 
-local calc = require('libcalc')
+local calc = require("libcalc")
+
+print("sum of 1-5: " .. sum(1, 2, 3, 4, 5))
 
 print("sum of emt: " .. calc.sum())
 print("sum of 1-5: " .. calc.sum(1, 2, 3, 4, 5))

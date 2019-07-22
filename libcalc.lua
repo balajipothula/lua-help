@@ -13,7 +13,7 @@ calc.sum = function (...)
   local t = {...}
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if tonumber(n) then
         r = r + n
       end
     end
