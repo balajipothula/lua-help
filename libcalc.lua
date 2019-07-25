@@ -12,8 +12,8 @@ _M.sum = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r + n
       end
     end
@@ -25,8 +25,8 @@ end
 _M.tsum = function (t)
   local r = 0
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r + n
       end
     end
@@ -39,8 +39,8 @@ _M.mul = function (...)
   local r = 1
   local t = {...}
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r * n
       end
     end
@@ -52,8 +52,8 @@ end
 _M.tmul = function (t)
   local r = 1
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r * n
       end
     end
@@ -66,8 +66,8 @@ _M.avg = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r + n
       end
     end
@@ -80,8 +80,8 @@ end
 _M.tavg = function (t)
   local r = 0
   if nil ~= t and 0 < #t then
-    for n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) then
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) then
         r = r + n
       end
     end
@@ -92,7 +92,7 @@ end
 
 --> calculating factorial of a number.
 _M.fact = function (n)
-  if "string" ~= type(n) and tonumber(n) and 0 <= n  then
+  if "string" ~= type(n) and 0 <= n  then
     if 0 == n then
       return 1
     else
@@ -110,7 +110,7 @@ _M.max = function (...)
   if nil ~= t and 0 < #t then
     m = t[1]
     for i, n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) and m < n then
+      if "string" ~= type(n) and m < n then
         m = n
       end
     end
@@ -124,7 +124,7 @@ _M.tmax = function (t)
   if nil ~= t and 0 < #t then
     m = t[1]
     for i, n in ipairs(t) do
-      if "string" ~= type(n) and tonumber(n) and m < n then
+      if "string" ~= type(n) and m < n then
         m = n
       end
     end
