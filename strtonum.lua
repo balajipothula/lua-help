@@ -1,4 +1,4 @@
--- defines a factorial function
+-->
 
 line = io.read()
 n = tonumber(line)

@@ -1,19 +1,19 @@
 --> module name and file name must be same.
 --> calculator library with non-global functions.
 
-local calc = {}
+local _M = {}
 
 --[[
-calc.sum = function (self, ...)
+_M.sum = function (self, ...)
 --]]
 
 --> calculating sum of numbers.
-calc.sum = function (...)
+_M.sum = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if tonumber(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r + n
       end
     end
@@ -22,11 +22,11 @@ calc.sum = function (...)
 end
 
 --> calculating sum of table of numbers.
-calc.tsum = function (t)
+_M.tsum = function (t)
   local r = 0
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r + n
       end
     end
@@ -35,12 +35,12 @@ calc.tsum = function (t)
 end
 
 --> calculating product of numbers.
-calc.mul = function (...)
+_M.mul = function (...)
   local r = 1
   local t = {...}
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r * n
       end
     end
@@ -49,11 +49,11 @@ calc.mul = function (...)
 end
 
 --> calculating product of table of numbers.
-calc.tmul = function (t)
+_M.tmul = function (t)
   local r = 1
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r * n
       end
     end
@@ -62,26 +62,26 @@ calc.tmul = function (t)
 end
 
 --> calculating average of numbers.
-calc.avg = function (...)
+_M.avg = function (...)
   local r = 0
   local t = {...}
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r + n
       end
     end
-    return r / #t
+    return r / #t  
   end
   return 0
 end
 
 --> calculating average of table of numbers.
-calc.tavg = function (t)
+_M.tavg = function (t)
   local r = 0
   if nil ~= t and 0 < #t then
     for n in ipairs(t) do
-      if "number" == type(n) then
+      if "string" ~= type(n) and tonumber(n) then
         r = r + n
       end
     end
@@ -91,15 +91,45 @@ calc.tavg = function (t)
 end
 
 --> calculating factorial of a number.
-calc.fact = function (...)
-  if "number" == type(n) and 0 <= n then
+_M.fact = function (n)
+  if "string" ~= type(n) and tonumber(n) and 0 <= n  then
     if 0 == n then
       return 1
     else
-      return n * calc.fact(n-1)
+      return n * _M.fact(n-1)
     end
   end
   return 0
 end
 
-return calc
+
+-- finding max value from variable arguments.
+_M.max = function (...)
+  local t = {...}
+  local m = 0
+  if nil ~= t and 0 < #t then
+    m = t[1]
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) and tonumber(n) and m < n then
+        m = n
+      end
+    end
+  end
+  return m
+end
+
+-- finding max value from table of numbers.
+_M.tmax = function (t)
+  local m = 0
+  if nil ~= t and 0 < #t then
+    m = t[1]
+    for i, n in ipairs(t) do
+      if "string" ~= type(n) and tonumber(n) and m < n then
+        m = n
+      end
+    end
+  end
+  return m
+end
+
+return _M
