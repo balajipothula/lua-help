@@ -3,6 +3,12 @@ local emp_table = { { no = "101", name = "Ram" },
                     { no = "103", name = "Dev" },
                     { no = "104", name = "Tej" } }
                   
+emp_table[#emp_table + 1] = { no = "105", name = "Raj" }
+
+table.insert(emp_table, #emp_table + 1, { no = "106", name = "Ali" })
+
+table.insert(emp_table, { no = "107", name = "Rao" })
+
 for _, emp in pairs(emp_table) do
   print(emp.no, emp.name)
 end
