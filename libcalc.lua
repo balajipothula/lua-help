@@ -103,7 +103,7 @@ _M.fact = function (n)
 end
 
 
--- finding max value from variable arguments.
+--> finding max value from variable arguments.
 _M.max = function (...)
   local t = {...}
   local m = 0
@@ -118,7 +118,7 @@ _M.max = function (...)
   return m
 end
 
--- finding max value from table of numbers.
+--> finding max value from table of numbers.
 _M.tmax = function (t)
   local m = 0
   if nil ~= t and 0 < #t then
