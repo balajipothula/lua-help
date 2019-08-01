@@ -1,0 +1,25 @@
+lua_package_path  --> https://stackoverflow.com/questions/18040250/luas-package-path-in-nginx
+lua_package_cpath --> 
+
+resolver 8.8.8.8 1.1.1.1 ipv6=off;
+
+proxy_listen
+proxy_protocol
+
+proxy_error_log /webapp/nginx/log/proxy/error.log
+proxy_access_log /webapp/nginx/log/proxy/access.log
+
+admin_error_log /webapp/nginx/log/admin/error.log
+admin_access_log /webapp/nginx/log/admin/access.log
+
+--> begin
+init_by_lua_block { require("cjson") }
+
+server {
+  location = /cjsoneg {
+    content_by_lua_block {
+      ngx.say(require("cjson").encode{dog = 5, cat = 6})
+    }
+  }
+}
+--> end
