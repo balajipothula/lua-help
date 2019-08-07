@@ -1,13 +1,13 @@
-local t = "hello world..! hello balaji..!"
+local txt = "hello world..! hello balaji..!"
 
 io.write("enter a string to find: ")
-local s = io.read()
+local str = io.read()
 
-local p = 1
-local l = string.len(t)
+local pos = 1
+local len = string.len(txt)
 
 repeat
-  local i, e = string.find(t, s, p, l)
+  local i, e = string.find(txt, str, pos, len)
   if nil ~= i and nil ~= e then
     print('"' .. string.sub(t, i, e) .. '" string exist in the text at position ' .. i .. ", " .. e)
     p = e + 1
