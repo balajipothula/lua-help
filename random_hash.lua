@@ -21,7 +21,7 @@ end
 
 local set = {}
 for i = 1, 100000 do
-  local id = random_hash(32)
+  local id = random_hash(9)
   if not set[id] then
     table.insert(set, id)
     set[id] = true
