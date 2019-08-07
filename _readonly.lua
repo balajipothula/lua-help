@@ -8,9 +8,9 @@ function readonly (ctable)
 end
 
 ctable = {
-    pi = 3.14159,
-    e  = 2.71828,
-    mu = 1.45136,
+  pi = 3.14159,
+  e  = 2.71828,
+  mu = 1.45136,
 }
 
 constant = readonly(ctable)
