@@ -19,6 +19,14 @@ function random_hash(len)
 
 end
 
-for i = 1, 100 do
-  print("Random Hash String:", random_hash(32))
+local set = {}
+for i = 1, 100000 do
+  local id = random_hash(32)
+  if not set[id] then
+    table.insert(set, id)
+    set[id] = true
+  end
 end
+
+print(#set)
+for i = 1, 100000 do print(set[i]) end
