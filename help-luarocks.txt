@@ -3,3 +3,6 @@ luarocks install luacov
 luarocks install luacov-console
 
 luarocks install reql
+
+luarocks install luacheck
+luarocks install luacheck-formatter-sonar
