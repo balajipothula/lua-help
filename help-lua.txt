@@ -1,0 +1,5 @@
+luarocks install busted
+luarocks install luacov
+luarocks install luacov-console
+
+luarocks install reql
